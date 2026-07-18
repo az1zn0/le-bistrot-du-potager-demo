@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Bistrot du Potager — Salon-de-Provence</title>
+<meta name="description" content="Le Bistrot du Potager — cuisine française de saison, née d'un potager, servie au cœur de Salon-de-Provence.">
+
+<meta property="og:title" content="Le Bistrot du Potager">
+<meta property="og:description" content="Cuisine de saison, née d'un potager. Salon-de-Provence.">
+<meta property="og:type" content="restaurant.restaurant">
+<meta property="og:image" content="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:url" content="https://www.lebistrotdupotagersalon.com/">
+<link rel="canonical" href="https://www.lebistrotdupotagersalon.com/">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=1800&q=85">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,340;0,9..144,440;1,9..144,400;1,9..144,440&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Le Bistrot du Potager",
+  "servesCuisine": "French",
+  "priceRange": "€20–50",
+  "telephone": "+33 4 42 86 35 01",
+  "url": "https://www.lebistrotdupotagersalon.com/",
+  "image": "https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=1200&q=80",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "13 Place Eugène Pelletan",
+    "addressLocality": "Salon-de-Provence",
+    "postalCode": "13300",
+    "addressCountry": "FR"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "12:00",
+    "closes": "22:00"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.3",
+    "reviewCount": "451"
+  }
+}
+</script>
+
+<style>
+  :root{
+    --ivory:#F6F1E6;
+    --charcoal:#221F19;
+    --charcoal-soft:#4A4638;
+    --olive:#6E7658;
+    --gold:#A9814C;
+    --line:rgba(34,31,25,0.10);
+    --ease:cubic-bezier(.16,.84,.44,1);
+    --ease-soft:cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--ivory);
+    color:var(--charcoal);
+    font-family:'Work Sans', sans-serif;
+    font-weight:300;
+    line-height:1.7;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    opacity:0;
+    transition:opacity .6s var(--ease);
+  }
+  body.ready{ opacity:1; }
+  h1,h2,h3,.serif{ font-family:'Fraunces', serif; font-weight:400; letter-spacing:-0.01em; font-feature-settings:"liga" 1, "kern" 1; text-wrap:balance; }
+  p{ text-wrap:pretty; }
+  .italic{ font-style:italic; color:var(--gold); }
+  a{ color:inherit; text-decoration:none; }
+  img{ display:block; max-width:100%; }
+  ::selection{ background:var(--olive); color:var(--ivory); }
+  a:focus-visible, button:focus-visible{ outline:1px solid var(--gold); outline-offset:4px; border-radius:1px; }
+
+  ::-webkit-scrollbar{ width:9px; }
+  ::-webkit-scrollbar-track{ background:var(--ivory); }
+  ::-webkit-scrollbar-thumb{ background:var(--beige,#D9CCAA); border:2px solid var(--ivory); border-radius:10px; }
+  ::-webkit-scrollbar-thumb:hover{ background:var(--gold); }
+  html{ scrollbar-color:#D9CCAA var(--ivory); scrollbar-width:thin; }
+
+  .wrap{ max-width:1280px; margin:0 auto; padding:0 56px; }
+  @media (max-width:768px){ .wrap{ padding:0 26px; } }
+
+  .skip-link{
+    position:fixed; top:-60px; left:16px; z-index:300; background:var(--charcoal); color:#fff;
+    padding:12px 20px; font-size:13px; transition:top .3s ease;
+  }
+  .skip-link:focus{ top:16px; }
+
+  /* text-link — the ONE interactive affordance used across the whole site */
+  .text-link{
+    position:relative; display:inline-block; font-size:13px; letter-spacing:.08em; text-transform:uppercase;
+    padding-bottom:6px; transition:opacity .4s var(--ease), transform .25s var(--ease);
+  }
+  .text-link::after{
+    content:''; position:absolute; left:0; bottom:0; width:100%; height:1px; background:currentColor;
+    transform:scaleX(1); transform-origin:left; transition:transform .6s var(--ease);
+  }
+  .text-link:hover::after{ transform:scaleX(0); transform-origin:right; }
+  .text-link:hover{ opacity:.72; }
+  .text-link:active{ transform:translateY(1px); }
+  .text-link.gold{ color:var(--gold); }
+  .text-link.arrow::before{
+    content:'→'; display:inline-block; margin-right:8px; opacity:0; transform:translateX(-6px);
+    transition:opacity .4s var(--ease), transform .4s var(--ease);
+  }
+  .text-link.arrow:hover::before{ opacity:1; transform:translateX(0); }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100; padding:38px 0;
+    transition:padding .5s var(--ease), background .5s var(--ease), border-color .5s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{ padding:22px 0; background:rgba(246,241,230,.92); backdrop-filter:blur(10px); border-color:var(--line); }
+  header .wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .brand-mark{ color:#fff; font-family:'Fraunces',serif; font-size:14px; letter-spacing:.16em; text-transform:uppercase; transition:color .5s var(--ease); }
+  header.scrolled .brand-mark{ color:var(--charcoal); }
+  nav.primary-nav{ display:flex; gap:44px; }
+  nav.primary-nav a{
+    position:relative; color:#fff; font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+    transition:color .5s var(--ease); opacity:.85; padding-bottom:3px;
+  }
+  nav.primary-nav a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:currentColor;
+    transition:width .4s var(--ease);
+  }
+  nav.primary-nav a:hover{ opacity:1; }
+  nav.primary-nav a:hover::after{ width:100%; }
+  header.scrolled nav.primary-nav a{ color:var(--charcoal-soft); }
+  .menu-toggle{ display:none; background:none; border:0; color:#fff; font-size:12px; letter-spacing:.1em; text-transform:uppercase; transition:color .5s var(--ease), opacity .3s ease; opacity:.85; }
+  .menu-toggle:hover{ opacity:1; }
+  header.scrolled .menu-toggle{ color:var(--charcoal); }
+  @media (max-width:900px){ nav.primary-nav{ display:none; } .menu-toggle{ display:block; } }
+
+  .mobile-nav{
+    position:fixed; inset:0; background:var(--charcoal); z-index:200;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:34px;
+    transform:translateY(-100%); transition:transform .6s var(--ease);
+  }
+  .mobile-nav.open{ transform:translateY(0); }
+  .mobile-nav a{ color:var(--ivory); font-family:'Fraunces',serif; font-size:26px; font-weight:300; opacity:.88; transition:opacity .3s ease; }
+  .mobile-nav a:hover{ opacity:1; }
+  .mobile-nav .close-btn{ position:absolute; top:34px; right:30px; background:none; border:0; color:var(--ivory); font-size:12px; letter-spacing:.1em; text-transform:uppercase; opacity:.8; transition:opacity .3s ease; }
+  .mobile-nav .close-btn:hover{ opacity:1; }
+
+  /* ---------- HERO ---------- */
+  .hero{ position:relative; height:100vh; min-height:680px; overflow:hidden; display:flex; align-items:flex-end; }
+  .hero-bg{
+    position:absolute; inset:0;
+    background-image:url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=1800&q=85');
+    background-size:cover; background-position:center 42%;
+    transform:scale(1.05);
+  }
+  body.ready .hero-bg{ animation:heroZoom 22s ease-out forwards; }
+  @keyframes heroZoom{ to{ transform:scale(1); } }
+  .hero-scrim{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,18,12,.42) 0%, rgba(20,18,12,.08) 34%, rgba(20,18,12,.3) 66%, rgba(20,18,12,.74) 100%); }
+  .hero-inner{ position:relative; z-index:2; width:100%; padding-bottom:110px; }
+  .hero-eyebrow{ color:rgba(246,241,230,.85); font-size:12px; letter-spacing:.24em; text-transform:uppercase; margin-bottom:28px; opacity:0; }
+  .hero h1{ color:#fff; font-weight:300; font-size:clamp(42px, 6.4vw, 88px); line-height:1.02; max-width:16ch; opacity:0; }
+  .hero-actions{ margin-top:44px; display:flex; gap:32px; align-items:center; opacity:0; }
+  body.ready .hero-eyebrow{ animation:riseIn 1.3s var(--ease) forwards; animation-delay:.4s; }
+  body.ready .hero h1{ animation:riseIn 1.4s var(--ease) forwards; animation-delay:.6s; }
+  body.ready .hero-actions{ animation:riseIn 1.4s var(--ease) forwards; animation-delay:1s; }
+  .hero-actions .text-link{ color:#fff; }
+  @keyframes riseIn{ from{ opacity:0; transform:translateY(18px);} to{ opacity:1; transform:translateY(0);} }
+
+  .scroll-cue{ position:absolute; right:56px; bottom:44px; z-index:2; color:rgba(255,255,255,.6); display:flex; flex-direction:column; align-items:center; gap:12px; font-size:10px; letter-spacing:.2em; text-transform:uppercase; }
+  .scroll-cue .line{ width:1px; height:50px; background:rgba(255,255,255,.4); position:relative; overflow:hidden; }
+  .scroll-cue .line::after{ content:''; position:absolute; top:-100%; left:0; width:100%; height:100%; background:#fff; animation:scrollLine 2.6s ease-in-out infinite; }
+  @keyframes scrollLine{ 0%{top:-100%;} 50%{top:0;} 100%{top:100%;} }
+  @media (max-width:768px){ .scroll-cue{ display:none; } }
+
+  /* ---------- reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(22px) scale(.995); transition:opacity 1.3s var(--ease), transform 1.3s var(--ease); }
+  .reveal.in{ opacity:1; transform:translateY(0) scale(1); }
+  .reveal-d1{ transition-delay:.15s; } .reveal-d2{ transition-delay:.3s; }
+
+  .img-reveal{ overflow:hidden; }
+  .img-reveal img{ transform:scale(1.1); transition:transform 1.9s var(--ease); }
+  .img-reveal.in img{ transform:scale(1); }
+
+  /* ---------- SECTION RHYTHM ---------- */
+  section{ padding:200px 0; position:relative; }
+  @media (max-width:900px){ section{ padding:110px 0; } }
+
+  .eyebrow{ font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--olive); margin-bottom:30px; }
+
+  /* ---------- PHILOSOPHY ---------- */
+  .philosophy{ background:var(--ivory); }
+  .philosophy .grid{ display:grid; grid-template-columns:0.82fr 1.18fr; gap:0 110px; align-items:start; }
+  .philosophy h2{ font-size:clamp(32px,4.4vw,58px); line-height:1.1; font-weight:300; }
+  .philosophy .lede{ font-size:19px; font-weight:300; color:var(--charcoal-soft); margin-top:34px; max-width:42ch; }
+  .philosophy .signoff{ margin-top:56px; font-family:'Fraunces',serif; font-style:italic; font-size:15px; color:var(--olive); }
+  @media (max-width:960px){ .philosophy .grid{ grid-template-columns:1fr; gap:60px; } }
+
+  .garden-line{ width:100%; max-width:420px; height:auto; margin-top:64px; }
+  .garden-line path{ stroke:var(--gold); stroke-width:1; fill:none; stroke-dasharray:600; stroke-dashoffset:600; transition:stroke-dashoffset 2.4s var(--ease); }
+  .garden-line.in path{ stroke-dashoffset:0; }
+
+  /* ---------- FULL BLEED BREAK ---------- */
+  .break-image{ position:relative; height:78vh; min-height:460px; overflow:hidden; padding:0; }
+  .break-image img{ width:100%; height:100%; object-fit:cover; }
+  .break-caption{ position:absolute; bottom:36px; left:56px; color:#fff; font-size:11px; letter-spacing:.16em; text-transform:uppercase; opacity:.85; }
+  @media (max-width:768px){ .break-caption{ left:26px; } }
+
+  /* ---------- MENU (editorial list, no tabs) ---------- */
+  .menu-section{ background:var(--charcoal); color:var(--ivory); }
+  .menu-section .eyebrow{ color:rgba(246,241,230,.55); }
+  .menu-header{ max-width:44ch; margin-bottom:112px; }
+  .menu-header h2{ font-size:clamp(32px,4.4vw,54px); font-weight:300; line-height:1.12; }
+  .menu-header p{ margin-top:24px; color:rgba(246,241,230,.55); font-weight:300; font-size:15px; }
+
+  .course{ margin-bottom:96px; }
+  .course:last-child{ margin-bottom:0; }
+  .course-head{ display:flex; align-items:baseline; gap:24px; margin-bottom:44px; }
+  .course-head h3{ font-size:clamp(22px,2.6vw,30px); font-weight:300; font-style:italic; white-space:nowrap; }
+  .course-head .rule{ flex:1; height:1px; background:rgba(246,241,230,.16); }
+
+  .menu-item{ display:grid; grid-template-columns:1fr auto; gap:28px; padding:26px 0; border-bottom:1px solid rgba(246,241,230,.1); align-items:start; }
+  .menu-item:last-child{ border-bottom:0; }
+  .menu-item .name{ font-family:'Fraunces',serif; font-size:19px; font-weight:400; line-height:1.4; }
+  .menu-item .desc{ color:rgba(246,241,230,.5); font-size:13.5px; font-weight:300; margin-top:8px; max-width:54ch; }
+  .menu-item .price{ font-family:'Fraunces',serif; font-size:16px; color:var(--gold); font-style:italic; white-space:nowrap; font-variant-numeric:oldstyle-nums; line-height:1.4; }
+  .menu-note{ margin-top:70px; font-size:12.5px; color:rgba(246,241,230,.38); font-weight:300; }
+
+  /* ---------- CHEF — asymmetric, image breaks the grid ---------- */
+  .chef{ background:var(--ivory); overflow:hidden; }
+  .chef .grid{ display:grid; grid-template-columns:7fr 5fr; align-items:center; }
+  .chef-photo{ aspect-ratio:3/4; overflow:hidden; margin-left:-56px; }
+  .chef-photo img{ width:100%; height:100%; object-fit:cover; }
+  .chef-copy{ padding-left:80px; }
+  .chef-copy h2{ font-size:clamp(28px,3.4vw,42px); font-weight:300; line-height:1.14; }
+  .chef-copy p{ font-weight:300; color:var(--charcoal-soft); margin-top:26px; max-width:42ch; font-size:15.5px; }
+  .chef-copy .quote{ font-family:'Fraunces',serif; font-style:italic; font-size:21px; margin-top:40px; max-width:36ch; line-height:1.5; color:var(--charcoal); }
+  @media (max-width:960px){
+    .chef .grid{ grid-template-columns:1fr; gap:56px; }
+    .chef-photo{ margin-left:0; }
+    .chef-copy{ padding-left:0; }
+  }
+
+  /* ---------- GALLERY — asymmetric, few large images ---------- */
+  .gallery{ background:var(--ivory); }
+  .gallery-header{ margin-bottom:96px; max-width:44ch; }
+  .gallery-header h2{ font-size:clamp(32px,4.4vw,54px); font-weight:300; }
+  .gallery-asym{ display:grid; grid-template-columns:7fr 5fr; gap:28px; }
+  .gallery-asym .col-right{ display:flex; flex-direction:column; gap:28px; padding-top:96px; }
+  .gallery-asym figure{ overflow:hidden; }
+  .gallery-asym img{ width:100%; height:100%; object-fit:cover; transition:transform 1.6s var(--ease), filter 1.6s var(--ease); filter:saturate(1); }
+  .gallery-asym figure:hover img{ transform:scale(1.04); filter:saturate(1.08); }
+  .g-tall{ aspect-ratio:4/5; }
+  .g-wide{ aspect-ratio:5/4; }
+  @media (max-width:900px){
+    .gallery-asym{ grid-template-columns:1fr; }
+    .gallery-asym .col-right{ padding-top:0; }
+  }
+
+  /* ---------- PRIVATE DINING ---------- */
+  .private{ position:relative; color:#fff; overflow:hidden; }
+  .private-bg{ position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?auto=format&fit=crop&w=1800&q=80'); background-size:cover; background-position:center; background-attachment:fixed; }
+  .private::after{ content:''; position:absolute; inset:0; background:rgba(20,18,12,.58); }
+  .private .wrap{ position:relative; z-index:2; max-width:600px; }
+  .private .eyebrow{ color:rgba(246,241,230,.7); }
+  .private h2{ font-size:clamp(30px,4.2vw,50px); line-height:1.14; font-weight:300; }
+  .private p{ margin-top:24px; font-weight:300; color:rgba(255,255,255,.78); max-width:44ch; font-size:15.5px; }
+  .private .text-link{ margin-top:40px; color:#fff; display:inline-block; }
+  @media (max-width:768px){ .private-bg{ background-attachment:scroll; } }
+
+  /* ---------- TESTIMONIAL — single quote, quiet cycling ---------- */
+  .testimonial{ background:var(--ivory); text-align:center; }
+  .testimonial .eyebrow{ justify-content:center; display:flex; }
+  .t-quote{ max-width:640px; margin:50px auto 0; min-height:150px; }
+  .t-quote p{ font-family:'Fraunces',serif; font-style:italic; font-size:clamp(22px,3vw,30px); line-height:1.5; color:var(--charcoal); transition:opacity .5s var(--ease-soft); }
+  .t-quote .who{ margin-top:26px; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--olive); }
+  .t-nav{ display:flex; justify-content:center; gap:22px; margin-top:44px; }
+  .t-dot{ width:6px; height:6px; border-radius:50%; background:var(--line); border:0; cursor:pointer; transition:background .4s var(--ease-soft), transform .3s var(--ease-soft); padding:0; }
+  .t-dot:hover{ transform:scale(1.5); }
+  .t-dot.active{ background:var(--gold); }
+  .t-rating{ margin-top:26px; font-size:12px; color:var(--olive); letter-spacing:.04em; }
+
+  /* ---------- LOCATION ---------- */
+  .location{ background:var(--charcoal); color:var(--ivory); }
+  .location .grid{ display:grid; grid-template-columns:5fr 7fr; gap:90px; align-items:center; }
+  .location h2{ font-size:clamp(28px,3.6vw,44px); font-weight:300; line-height:1.14; }
+  .loc-detail{ margin-top:44px; font-weight:300; font-size:16px; color:rgba(246,241,230,.75); line-height:2; }
+  .loc-detail .text-link{ margin-top:28px; color:var(--ivory); }
+  .map-frame{ overflow:hidden; aspect-ratio:5/4; }
+  .map-frame iframe{ width:100%; height:100%; border:0; filter:grayscale(.5) contrast(1.05) brightness(.92); transition:filter .8s var(--ease); }
+  .map-frame:hover iframe{ filter:grayscale(.15) contrast(1.02) brightness(1); }
+  @media (max-width:960px){ .location .grid{ grid-template-columns:1fr; gap:50px; } }
+
+  /* ---------- CLOSING ---------- */
+  .closing{ background:var(--ivory); text-align:center; padding:220px 0 180px; }
+  .closing h2{ font-size:clamp(34px,5vw,64px); font-weight:300; line-height:1.1; }
+  .closing .phone{ margin-top:30px; font-family:'Fraunces',serif; font-style:italic; font-size:20px; color:var(--olive); font-variant-numeric:oldstyle-nums; }
+  .closing .text-link{ margin-top:44px; color:var(--charcoal); font-size:13px; }
+  @media (max-width:900px){ .closing{ padding:130px 0 110px; } }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--charcoal); color:rgba(246,241,230,.55); padding:70px 0 40px; }
+  .footer-row{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:30px; }
+  footer .brand-mark{ color:var(--ivory); }
+  footer address{ font-style:normal; font-weight:300; font-size:13.5px; line-height:1.8; margin-top:14px; }
+  .footer-bottom{ margin-top:60px; padding-top:24px; border-top:1px solid rgba(246,241,230,.1); font-size:11.5px; color:rgba(246,241,230,.32); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  .grain{
+    position:fixed; inset:0; z-index:999; pointer-events:none; opacity:.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="#" class="brand-mark">Le Bistrot du Potager</a>
+    <nav class="primary-nav">
+      <a href="#philosophy">Philosophie</a>
+      <a href="#menu">Carte</a>
+      <a href="#chef">Le Chef</a>
+      <a href="#lieu">Adresse</a>
+      <a href="#reservation">Réserver</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle">Menu</button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" id="menuClose">Fermer</button>
+  <a href="#philosophy">Philosophie</a>
+  <a href="#menu">Carte</a>
+  <a href="#chef">Le Chef</a>
+  <a href="#lieu">Adresse</a>
+  <a href="#reservation">Réserver</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="main">
+  <div class="hero-bg"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-inner wrap">
+    <p class="hero-eyebrow">Salon-de-Provence</p>
+    <h1>Née d'un potager,<br>servie avec soin.</h1>
+    <div class="hero-actions">
+      <a href="#reservation" class="text-link arrow">Réserver une table</a>
+      <a href="#menu" class="text-link">La carte</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Défiler</span><span class="line"></span></div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div class="wrap">
+    <div class="grid">
+      <div class="reveal">
+        <div class="eyebrow">Notre philosophie</div>
+        <h2>Le jardin,<br>avant <span class="italic">la carte.</span></h2>
+        <svg class="garden-line" viewBox="0 0 420 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 20 C 90 4, 170 36, 260 18 S 380 4, 416 20"/>
+        </svg>
+      </div>
+      <div class="reveal reveal-d2">
+        <p class="lede">Chez Le Bistrot du Potager, la recette ne précède jamais la récolte. Chaque assiette part d'un légume, d'une herbe, d'un fruit trouvé au marché ou chez un producteur des environs de Salon — puis se construit autour, jamais l'inverse.</p>
+        <p class="signoff">— une cuisine qui suit la saison, pas l'inverse</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL BLEED BREAK -->
+<div class="break-image img-reveal">
+  <img src="https://images.unsplash.com/photo-1495195129352-aeb325a55b65?auto=format&fit=crop&w=1800&q=85" alt="Herbes et légumes du potager, tout juste récoltés" width="1800" height="1013" loading="lazy">
+  <span class="break-caption">La récolte du matin</span>
+</div>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="wrap">
+    <div class="menu-header reveal">
+      <div class="eyebrow">La carte</div>
+      <h2>Ce que le potager donne, ce mois-ci</h2>
+      <p>La carte change avec les récoltes — voici un aperçu de ce que l'on sert en ce moment.</p>
+    </div>
+
+    <div class="course reveal">
+      <div class="course-head"><h3>Entrées</h3><div class="rule"></div></div>
+      <div class="menu-item">
+        <div><div class="name">Légumes du potager, croquants et confits</div><div class="desc">Sélection de légumes de saison préparés de deux façons, vinaigrette au citron confit.</div></div>
+        <div class="price">12 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="name">Velouté de saison, herbes du jardin</div><div class="desc">Légume du moment, crème fraîche, huile d'herbes fraîches ciselées.</div></div>
+        <div class="price">10 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="name">Terrine de la maison, pickles maison</div><div class="desc">Terrine préparée en cuisine, légumes lacto-fermentés, pain grillé.</div></div>
+        <div class="price">13 €</div>
+      </div>
+    </div>
+
+    <div class="course reveal">
+      <div class="course-head"><h3>Plats</h3><div class="rule"></div></div>
+      <div class="menu-item">
+        <div><div class="name">Volaille fermière, jus court, légumes racines</div><div class="desc">Cuisson lente, légumes du potager rôtis, jus réduit à la minute.</div></div>
+        <div class="price">24 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="name">Poisson du jour, beurre blanc, fenouil</div><div class="desc">Arrivage du jour selon la pêche, accompagné de légumes de saison.</div></div>
+        <div class="price">26 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="name">Risotto du potager, parmesan affiné</div><div class="desc">Légumes de saison, bouillon maison, parmesan 24 mois.</div></div>
+        <div class="price">21 €</div>
+      </div>
+    </div>
+
+    <div class="course reveal">
+      <div class="course-head"><h3>Desserts</h3><div class="rule"></div></div>
+      <div class="menu-item">
+        <div><div class="name">Tarte fine du moment, fruits de saison</div><div class="desc">Pâte maison, fruits choisis selon la récolte, crème légère.</div></div>
+        <div class="price">9 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="name">Chocolat grand cru, éclats de sel</div><div class="desc">Ganache fondante, sel de Camargue, biscuit croustillant.</div></div>
+        <div class="price">10 €</div>
+      </div>
+    </div>
+
+    <p class="menu-note reveal">Menu déjeuner disponible en semaine · Menu enfant proposé · Accords mets-vins sur demande en salle.</p>
+  </div>
+</section>
+
+<!-- CHEF -->
+<section class="chef" id="chef">
+  <div class="wrap">
+    <div class="grid">
+      <div class="chef-photo img-reveal">
+        <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=1100&q=85" alt="Le chef en cuisine, préparation d'un plat" width="1100" height="1467" loading="lazy">
+      </div>
+      <div class="chef-copy reveal reveal-d2">
+        <div class="eyebrow">En cuisine</div>
+        <h2>Une cuisine qui se pense au marché, pas au bureau.</h2>
+        <p>Chaque matin commence par la même question : qu'est-ce qui est beau, aujourd'hui ? La carte se construit à partir de la réponse — jamais l'inverse.</p>
+        <p class="quote">« On ne sert pas ce qu'on a envie de cuisiner. On cuisine ce que le potager veut bien nous donner. »</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="galerie">
+  <div class="wrap">
+    <div class="gallery-header reveal">
+      <div class="eyebrow">Galerie</div>
+      <h2>L'assiette, la salle, le geste</h2>
+    </div>
+    <div class="gallery-asym">
+      <figure class="g-tall img-reveal">
+        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1100&q=85" alt="Salle du restaurant en pleine service" width="1100" height="1375" loading="lazy">
+      </figure>
+      <div class="col-right">
+        <figure class="g-wide img-reveal">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85" alt="Assiette dressée, cuisine de saison" width="900" height="720" loading="lazy">
+        </figure>
+        <figure class="g-wide img-reveal">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=85" alt="Salle du restaurant, ambiance chaleureuse" width="900" height="720" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVATE DINING -->
+<section class="private">
+  <div class="private-bg"></div>
+  <div class="wrap reveal">
+    <div class="eyebrow">Privatisation & événements</div>
+    <h2>Votre table, notre potager, pour l'occasion.</h2>
+    <p>Anniversaire, repas d'entreprise, dîner privé — la salle et la terrasse se privatisent pour vos événements, avec un menu construit sur mesure selon la saison.</p>
+    <a href="#reservation" class="text-link">Demander un devis</a>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="wrap">
+    <div class="eyebrow">Ce que l'on en dit</div>
+    <div class="t-quote reveal" id="tQuote">
+      <p id="tQuoteText">« Cuisine délicieuse et généreuse. Service très amical et attentionné. Une adresse à ne pas manquer. »</p>
+      <div class="who" id="tQuoteWho">Avis Google</div>
+    </div>
+    <div class="t-nav" id="tNav">
+      <button class="t-dot active" data-i="0" aria-label="Avis 1"></button>
+      <button class="t-dot" data-i="1" aria-label="Avis 2"></button>
+      <button class="t-dot" data-i="2" aria-label="Avis 3"></button>
+    </div>
+    <p class="t-rating">4.3 / 5 — 451 avis Google</p>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="lieu">
+  <div class="wrap">
+    <div class="grid">
+      <div class="reveal">
+        <div class="eyebrow">Nous trouver</div>
+        <h2>Au cœur de Salon-de-Provence</h2>
+        <p class="loc-detail">
+          13 Place Eugène Pelletan<br>13300 Salon-de-Provence, France<br><br>
+          +33 4 42 86 35 01<br>
+          Tous les jours · Service jusqu'à 22h
+        </p>
+        <a href="tel:+33442863501" class="text-link">Appeler le restaurant</a>
+      </div>
+      <div class="map-frame img-reveal">
+        <iframe title="Localisation Le Bistrot du Potager" loading="lazy" src="https://www.google.com/maps?q=13+Place+Eugène+Pelletan,+13300+Salon-de-Provence,+France&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing" id="reservation">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Une table se libère,<br><span class="italic">ce soir peut-être.</span></h2>
+      <p class="phone">+33 4 42 86 35 01</p>
+      <a href="https://www.lebistrotdupotagersalon.com/" class="text-link gold arrow" target="_blank" rel="noopener">Réserver en ligne</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div>
+        <a href="#" class="brand-mark">Le Bistrot du Potager</a>
+        <address>13 Place Eugène Pelletan, 13300 Salon-de-Provence</address>
+      </div>
+      <a href="tel:+33442863501" class="text-link">+33 4 42 86 35 01</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Le Bistrot du Potager</span>
+      <span>Site conçu par Noli Digital Studio</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // hold the entrance until fonts are ready, then fade the page in — avoids FOUT/reflow jank
+  const markReady = () => document.body.classList.add('ready');
+  if (document.fonts && document.fonts.ready) {
+    Promise.race([
+      document.fonts.ready,
+      new Promise(res => setTimeout(res, 700)) // safety timeout
+    ]).then(markReady);
+  } else {
+    markReady();
+  }
+
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+
+  const toggle = document.getElementById('menuToggle');
+  const close = document.getElementById('menuClose');
+  const mobileNav = document.getElementById('mobileNav');
+  toggle.addEventListener('click', () => mobileNav.classList.add('open'));
+  close.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.16 });
+  document.querySelectorAll('.reveal, .img-reveal, .garden-line').forEach(el => io.observe(el));
+
+  // testimonial cycling
+  const quotes = [
+    { text: '« Cuisine délicieuse et généreuse. Service très amical et attentionné. Une adresse à ne pas manquer. »', who: 'Avis Google' },
+    { text: '« Top ! »', who: 'Avis Google' },
+    { text: '« Cadre parfait, accueil chaleureux et cuisine soignée. »', who: 'Avis Pages Jaunes' }
+  ];
+  const tText = document.getElementById('tQuoteText');
+  const tWho = document.getElementById('tQuoteWho');
+  const dots = document.querySelectorAll('.t-dot');
+  let tIndex = 0;
+  function setQuote(i){
+    tIndex = i;
+    tText.style.opacity = 0;
+    tWho.style.opacity = 0;
+    setTimeout(() => {
+      tText.textContent = quotes[i].text;
+      tWho.textContent = quotes[i].who;
+      tText.style.opacity = 1;
+      tWho.style.opacity = 1;
+    }, 350);
+    dots.forEach(d => d.classList.toggle('active', Number(d.dataset.i) === i));
+  }
+  dots.forEach(d => d.addEventListener('click', () => setQuote(Number(d.dataset.i))));
+  setInterval(() => setQuote((tIndex + 1) % quotes.length), 7000);
+</script>
+
+</body>
+</html>
